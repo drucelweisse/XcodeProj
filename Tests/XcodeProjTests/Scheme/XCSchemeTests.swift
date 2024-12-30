@@ -468,6 +468,19 @@ final class XCSchemeIntegrationTests: XCTestCase {
         // Then
         XCTAssertEqual(reconstructedSubject, subject)
     }
+  
+  func test_launchAction_appClipInvocationURLString_serializingAndDeserializing() throws {
+      // Given
+      let appClipInvocationURLString = "example://"
+      let subject = XCScheme.LaunchAction(runnable: nil, buildConfiguration: "Debug", appClipInvocationURLString: appClipInvocationURLString)
+    
+      // When
+      let xml = subject.xmlElement()
+      let reconstructedSubject = try XCScheme.LaunchAction(element: xml)
+    
+      // Then
+      XCTAssertEqual(reconstructedSubject, subject)
+  }
 
     // MARK: - Private
 
