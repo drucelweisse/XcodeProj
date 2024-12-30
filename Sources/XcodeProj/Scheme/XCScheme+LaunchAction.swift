@@ -84,7 +84,7 @@ public extension XCScheme {
         // To enable the option in Xcode: defaults write com.apple.dt.Xcode IDEDebuggerFeatureSetting 12
         public var customLaunchCommand: String?
         public var customLLDBInitFile: String?
-      
+
         public var appClipInvocationURLString: String?
 
         // MARK: - Init
@@ -129,8 +129,7 @@ public extension XCScheme {
                     storeKitConfigurationFileReference: StoreKitConfigurationFileReference? = nil,
                     customLaunchCommand: String? = nil,
                     customLLDBInitFile: String? = nil,
-                    appClipInvocationURLString: String? = nil
-        ) {
+                    appClipInvocationURLString: String? = nil) {
             self.runnable = runnable
             self.macroExpansion = macroExpansion
             self.buildConfiguration = buildConfiguration
@@ -344,8 +343,8 @@ public extension XCScheme {
             if let elementCustomWorkingDirectory: String = element.attributes["customWorkingDirectory"] {
                 customWorkingDirectory = elementCustomWorkingDirectory
             }
-          appClipInvocationURLString = element.attributes["appClipInvocationURLString"]
-            
+            appClipInvocationURLString = element.attributes["appClipInvocationURLString"]
+
             try super.init(element: element)
         }
 
@@ -412,11 +411,10 @@ public extension XCScheme {
             if let customWorkingDirectory {
                 attributes["customWorkingDirectory"] = customWorkingDirectory
             }
-            
+
             if let appClipInvocationURLString {
-              attributes["appClipInvocationURLString"] = appClipInvocationURLString
+                attributes["appClipInvocationURLString"] = appClipInvocationURLString
             }
-          
 
             return attributes
         }
